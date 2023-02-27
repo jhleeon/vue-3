@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two way data binding</title>
+    <script src="https://unpkg.com/vue@3"></script>
+    <style>
+        h3,
+        input,
+        button {
+            margin: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <h3>Enter Number</h3>
+        <input type="text" v-model="num">
+        <br>
+        <button @click="getDouble">Double</button>
+        <button @click="getSquare">Square</button>
+        <button @click="getReset">Reset</button>
+        <hr>
+        <label>Enterd Number: </label> {{ num }}
+        <p>Result: {{ result }}</p>
+    </div>
+
+    <script>
+        Vue.createApp({
+            data() {
+                return {
+                    num: "",
+                    result: ""
+                }
+            },
+            methods:
+            {
+                getDouble() {
+                    this.result = this.num * 2;
+                },
+
+                getSquare() {
+                    this.result = this.num * this.num
+                },
+
+                getReset() {
+                    this.num = "",
+                        this.result = ""
+                }
+            }
+        }).mount("#app")
+    </script>
+</body>
+
+</html>
