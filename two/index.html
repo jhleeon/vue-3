@@ -11,8 +11,10 @@
     
     <section id="app">
         <h2>All Skills</h2>
+        <input type="text" style="margin-right: 5px;" v-model="item">
+        <button @click="addItem">ADD</button>
         <ul>
-            <li v-for = "skill in skills">{{ skill }}</li>     
+            <li v-for = "(skill, i) in skills" @click="removeItem">index no: {{ i }} - {{ skill }}</li>     
         </ul>
     </section>
 
@@ -20,7 +22,17 @@
         let app = {
             data(){
                 return{
-                    skills: ['php','js', 'vue']
+                    skills: ['php','js', 'vue'],
+                    item: "",
+                }
+            },
+            methods:{
+                addItem(){
+                    this.skills.push(this.item);
+                },
+
+                removeItem(){
+                    this.skills.splice(i,1);
                 }
             }
         }
