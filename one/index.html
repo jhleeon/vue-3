@@ -7,24 +7,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vue 3</title>
     <script src="https://unpkg.com/vue@3"></script>
+    <style>
+        html,body{height: 100%;}
+        
+        body
+        {
+            display: grid;
+            place-items: center;
+        }
+
+        .text-red
+        {
+            color:red;
+        }
+
+        .text-green
+        {
+            color:green;
+        }
+    </style>
 
 </head>
 
 <body>
     <div id="app">
-        <div>
-            <input type="text" v-model="greetings">
-        </div>
-        <div>
-            <p>{{ greetings }}; The length is : {{greetings.length}}</p>
-        </div>
-    </div>
+        <button :class="active ? 'text-red' : 'text-green'" @click="toogle">clik me</button>
+     </div>
 
     <script>
         Vue.createApp({
             data() {
                 return {
-                    greetings: "Learning Vue.js 3"
+                    active : false
+                }
+            },
+            methods:
+            {
+                toogle(){
+                    this.active = !this.active
                 }
             }
         }).mount('#app')
