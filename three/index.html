@@ -19,11 +19,10 @@
 <body>
     <div id="app">
         <h3>Enter Number</h3>
-        <input type="text" v-model.number="num">
+        <input type="text" v-model="num">
         <br>
         <button @click="getDouble">Double</button>
         <button @click="getSquare">Square</button>
-        <button @click="addTen">+10</button>
         <button @click="getReset">Reset</button>
         <hr>
         <label>Enterd Number: </label> {{ num }}
@@ -46,10 +45,6 @@
 
                 getSquare() {
                     this.result = this.num * this.num
-                },
-
-                addTen(){
-                    this.result = this.num + 10
                 },
 
                 getReset() {
