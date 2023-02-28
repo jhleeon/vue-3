@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loop</title>
+    <script src="https://unpkg.com/vue@3"></script>
+</head>
+<body>
+
+    <div id="app">
+        <table>
+            <tr v-for="(value, key, i) in people">
+                <th>{{ i + 1 }}</th>
+                <th>{{ key }}</th>
+                <td>{{ value }}</td>
+            </tr>
+        </table>
+        
+        <h3>Print 1 to 10</h3>
+        <div v-for="i in 10"> {{ i }} </div>
+    </div>   
+    <script>
+            Vue.createApp({
+            data(){
+                return{
+                    people:
+                        {
+                        name:'jahedul', 
+                        skill:'development',
+                        expert:'laravel'
+                    },
+                }
+            }
+        }).mount('#app')
+    </script>
+</body>
+</html>
