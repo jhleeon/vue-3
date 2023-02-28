@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3"></script>
+
+</head>
+<body>
+
+    <div id="app">
+        <div v-for="employee in employees">
+            <p>{{ employee.name }} -
+            <span v-if="employee.exp < 2"> noobi</span>
+            <span v-if="employee.exp < 3"> intermediate</span>
+            <span v-if="employee.exp < 3"> expert</span>
+            <span v-else> Legend</span>
+            </p>
+        </div>
+    </div>
+    
+
+    <script>
+        Vue.createApp({
+            data(){
+                return{
+                    employees:
+                    [
+                        {name:"Rabbi vai", exp: 1},
+                        {name:"Rashed vai", exp: 2},
+                        {name:"Mizan vai", exp: 2},
+                        {name:"Shaon vai", exp: 3},
+                        {name:"Parvez vai", exp: 5},
+                    ]
+                }
+            }
+        }).mount("#app")
+    </script>
+</body>
+</html>
