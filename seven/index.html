@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3"></script>
+
+</head>
+<body>
+    
+<div id="app">
+    <div v-for="(fruit,i) in fruits" :key="fruits.name"> <span @click="removeFruits(i)">{{ fruit }}</span> </div>
+    <hr>
+    <span v-show="!totalFruits==0"> = Total:{{ totalFruits }}</span>
+</div>
+
+<script>
+    Vue.createApp({
+        data(){
+            return{
+                fruits:["apple","mango","painapple","graps","dragon"]
+            }
+        },
+        
+        computed: {
+            totalFruits(){
+                return this.fruits.length;
+            }
+        },
+        methods: {
+            removeFruits(i){
+                this.fruits.splice(i,1);
+            }
+        }
+    }).mount("#app")
+</script>
+</body>
+</html>
