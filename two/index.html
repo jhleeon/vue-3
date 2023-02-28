@@ -14,7 +14,7 @@
         <input type="text" style="margin-right: 5px;" v-model="item">
         <button @click="addItem">ADD</button>
         <ul>
-            <li v-for = "(skill, i) in skills" @click="removeItem">index no: {{ i }} - {{ skill }}</li>     
+            <li v-for = "(skill, i) in skills" @click="removeItem(i)">{{ skill }}</li>     
         </ul>
     </section>
 
@@ -29,9 +29,11 @@
             methods:{
                 addItem(){
                     this.skills.push(this.item);
+                    this.item="";
                 },
 
-                removeItem(){
+                removeItem(i){
+                    // console.log(i);
                     this.skills.splice(i,1);
                 }
             }
