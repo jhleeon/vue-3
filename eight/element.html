@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Element Binding</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div>
+            <p> Course Name: {{ tutorialInfo.course }} </p>
+            <p> Duration: {{ tutorialInfo.duration }} </p>
+            <p>Larvael <span v-html="tutorialInfo.code"></span></p>
+        </div>
+    </div>
+
+    <script>
+        Vue.createApp({
+            data() {
+                return {
+                    tutorialInfo: {
+                        course: 'Laravel',
+                        duration: '5 months',
+                        code: '<a href="https://laracasts.com/series/laravel-8-from-scratch">Course Link</a>'
+                    }
+                }
+            }
+        }).mount("#app")
+    </script>
+</body>
+
+</html>
