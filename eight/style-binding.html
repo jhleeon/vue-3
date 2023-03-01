@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Style Binding</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+        div {
+            margin: 5px;
+        }
+
+        .box {
+            height: 100px;
+            width: 150px;
+        }
+
+        .active {
+            font-size: 100%;
+            font-weight: 800;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div id="app">
+        <div>
+            <label>Write Color Name: </label>
+            <input type="text" v-model="color">
+            <br>
+            <p :style="{color:color}">Your Selected color name is: {{ color }}</p>
+        </div>
+        <div :class="name" :style="{backgroundColor:color}"></div>
+    </div>
+
+
+    <script>
+        Vue.createApp({
+            data() {
+                return {
+                    name: "box",
+                    color:"red",
+                    
+                }
+            },
+        }).mount("#app")
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+        label, button {
+            margin: 2px;
+        };
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h3>Even & Odd Learning</h3>
+        <div>   
+            <button v-on:click="test($event, 'Clicked')">{{ click }}</button>     
+        </div>
+    </div>
+
+    <script>
+        Vue.createApp({
+            data() {
+                return {
+                    click: 'Yes'
+                }
+            },
+            methods:{
+                test(event, text){
+                    console.log(event);
+                    this.click = text;                    
+                }
+            }
+        }).mount("#app")
+    </script>
+</body>
+</html>
