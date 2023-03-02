@@ -1,5 +1,7 @@
 import { createApp } from 'vue'
 import App from './App.vue'
+import AboutUs from './components/AboutUs.vue'
 
-
-createApp(App).mount('#app');
+let app = createApp(App);
+app.mount("#app");
+app.component('about-us', AboutUs);

@@ -1,18 +1,21 @@
 <template>
-  <div>
-    <h1>{{ msg }}</h1>
-  </div>
+  <about-us
+  company-name="Rabbi"
+  email="Rabbi@gmail.com"
+  phone="01632140038"
+  ></about-us>
+
+  <about-us
+  company-name="Tariq Bro"
+  email="tariqbro@gmail.com"
+  phone="01632140039"
+  ></about-us>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
+export default {  
   data() {
-    return {
-      msg: "Hello Vue Developer",
-    }
-  }
+    return {}
+  } 
 }
-
 </script>
